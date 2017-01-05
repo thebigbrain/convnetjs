@@ -1,7 +1,7 @@
 import Vol from './vol' // convenience
 import { assert } from './utils'
 import { createLayer } from './layer-factory'
-//import * from './layers'
+import './layers'
 
 // Net manages a set of layers
 // For now constraints: Simple linear order of layers, first layer input last layer a cost layer

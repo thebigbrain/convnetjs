@@ -1,5 +1,5 @@
 import { register } from '../layer-factory'
-import { decorate } from 'core-decorator'
+import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
 // a helper function, since tanh is not yet part of ECMAScript. Will be in v6.
