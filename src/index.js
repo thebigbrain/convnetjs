@@ -1,12 +1,6 @@
-import Vol from './vol'
-import Net from './net'
-import MagicNet from './magicnet'
-import Trainer from './trainer'
+export * from './vol'
+export * from './net'
+export * from './magicnet'
+export * from './trainer'
 
-export default {
-	Vol,
-	Net,
-	MagicNet,
-	Trainer,
-	SGDTrainer: Trainer
-}
+export const SGDTrainer = Trainer

@@ -3,7 +3,7 @@ import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
 @decorate(register)
-class ConvLayer {
+export class ConvLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -170,4 +170,4 @@ class ConvLayer {
     }
 }
 
-export default ConvLayer
+//export default ConvLayer

@@ -109,7 +109,7 @@ let Vol = class Vol {
         // of incoming connections have outputs of larger variance
         var scale = Math.sqrt(1.0 / (sx * sy * depth));
         for (var i = 0; i < n; i++) {
-          this.w[i] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["j" /* randn */])(0.0, scale);
+          this.w[i] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* randn */])(0.0, scale);
         }
       } else {
         for (var i = 0; i < n; i++) {
@@ -541,19 +541,19 @@ const gaussRandom = function () {
 const randf = function (a, b) {
   return Math.random() * (b - a) + a;
 };
-/* harmony export (immutable) */ exports["g"] = randf;
+/* harmony export (immutable) */ exports["h"] = randf;
 
 
 const randi = function (a, b) {
   return Math.floor(Math.random() * (b - a) + a);
 };
-/* harmony export (immutable) */ exports["f"] = randi;
+/* harmony export (immutable) */ exports["g"] = randi;
 
 
 const randn = function (mu, std) {
   return mu + gaussRandom() * std;
 };
-/* harmony export (immutable) */ exports["j"] = randn;
+/* harmony export (immutable) */ exports["b"] = randn;
 
 
 const zeros = function (n) {
@@ -592,7 +592,7 @@ const arrUnique = function (arr) {
   }
   return b;
 };
-/* harmony export (immutable) */ exports["c"] = arrUnique;
+/* harmony export (immutable) */ exports["d"] = arrUnique;
 
 
 // return max and min of a given non-empty array.
@@ -617,7 +617,7 @@ const maxmin = function (w) {
   }
   return { maxi: maxi, maxv: maxv, mini: mini, minv: minv, dv: maxv - minv };
 };
-/* harmony export (immutable) */ exports["h"] = maxmin;
+/* harmony export (immutable) */ exports["i"] = maxmin;
 
 
 // create random permutation of numbers, in range [0...n-1]
@@ -635,7 +635,7 @@ const randperm = function (n) {
   }
   return array;
 };
-/* harmony export (immutable) */ exports["d"] = randperm;
+/* harmony export (immutable) */ exports["e"] = randperm;
 
 
 // sample from list lst according to probabilities in list probs
@@ -650,7 +650,7 @@ const weightedSample = function (lst, probs) {
     }
   }
 };
-/* harmony export (immutable) */ exports["e"] = weightedSample;
+/* harmony export (immutable) */ exports["f"] = weightedSample;
 
 
 // syntactic sugar function for getting default parameter values
@@ -670,7 +670,7 @@ const getopt = function (opt, field_name, default_value) {
     return ret;
   }
 };
-/* harmony export (immutable) */ exports["b"] = getopt;
+/* harmony export (immutable) */ exports["c"] = getopt;
 
 
 const assert = function (condition, message) {
@@ -682,7 +682,7 @@ const assert = function (condition, message) {
     throw message; // Fallback
   }
 };
-/* harmony export (immutable) */ exports["i"] = assert;
+/* harmony export (immutable) */ exports["j"] = assert;
 
 
 // Volume utilities
@@ -809,8 +809,8 @@ let Net = class Net {
   // takes a list of layer definitions and creates the network layer objects
   makeLayers(defs) {
     // few checks
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["i" /* assert */])(defs.length >= 2, 'Error! At least one input layer and one loss layer are required.');
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["i" /* assert */])(defs[0].type === 'input', 'Error! First layer must be the input layer, to declare size of inputs');
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["j" /* assert */])(defs.length >= 2, 'Error! At least one input layer and one loss layer are required.');
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["j" /* assert */])(defs[0].type === 'input', 'Error! First layer must be the input layer, to declare size of inputs');
 
     // desugar layer_defs for adding activation, dropout layers etc
     var desugar = function () {
@@ -967,7 +967,7 @@ let Net = class Net {
     // this is a convenience function for returning the argmax
     // prediction, assuming the last layer of the net is a softmax
     var S = this.layers[this.layers.length - 1];
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["i" /* assert */])(S.layer_type === 'softmax', 'getPrediction function assumes softmax as last layer of the net!');
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["j" /* assert */])(S.layer_type === 'softmax', 'getPrediction function assumes softmax as last layer of the net!');
 
     var p = S.out_act.w;
     var maxv = p[0];
@@ -1128,32 +1128,32 @@ let MagicNet = class MagicNet {
     this.labels = labels;
 
     // optional inputs
-    this.train_ratio = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'train_ratio', 0.7);
-    this.num_folds = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'num_folds', 10);
-    this.num_candidates = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'num_candidates', 50); // we evaluate several in parallel
+    this.train_ratio = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'train_ratio', 0.7);
+    this.num_folds = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'num_folds', 10);
+    this.num_candidates = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'num_candidates', 50); // we evaluate several in parallel
     // how many epochs of data to train every network? for every fold?
     // higher values mean higher accuracy in final results, but more expensive
-    this.num_epochs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'num_epochs', 50);
+    this.num_epochs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'num_epochs', 50);
     // number of best models to average during prediction. Usually higher = better
-    this.ensemble_size = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'ensemble_size', 10);
+    this.ensemble_size = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'ensemble_size', 10);
 
     // candidate parameters
-    this.batch_size_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'batch_size_min', 10);
-    this.batch_size_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'batch_size_max', 300);
-    this.l2_decay_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'l2_decay_min', -4);
-    this.l2_decay_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'l2_decay_max', 2);
-    this.learning_rate_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'learning_rate_min', -4);
-    this.learning_rate_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'learning_rate_max', 0);
-    this.momentum_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'momentum_min', 0.9);
-    this.momentum_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'momentum_max', 0.9);
-    this.neurons_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'neurons_min', 5);
-    this.neurons_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getopt */])(opt, 'neurons_max', 30);
+    this.batch_size_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'batch_size_min', 10);
+    this.batch_size_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'batch_size_max', 300);
+    this.l2_decay_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'l2_decay_min', -4);
+    this.l2_decay_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'l2_decay_max', 2);
+    this.learning_rate_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'learning_rate_min', -4);
+    this.learning_rate_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'learning_rate_max', 0);
+    this.momentum_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'momentum_min', 0.9);
+    this.momentum_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'momentum_max', 0.9);
+    this.neurons_min = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'neurons_min', 5);
+    this.neurons_max = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* getopt */])(opt, 'neurons_max', 30);
 
     // computed
     this.folds = []; // data fold indices, gets filled by sampleFolds()
     this.candidates = []; // candidate networks that are being currently evaluated
     this.evaluated_candidates = []; // history of all candidates that were fully evaluated on all folds
-    this.unique_labels = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* arrUnique */])(labels);
+    this.unique_labels = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["d" /* arrUnique */])(labels);
     this.iter = 0; // iteration counter, goes from 0 -> num_epochs * num_training_data
     this.foldix = 0; // index of active fold
 
@@ -1174,7 +1174,7 @@ let MagicNet = class MagicNet {
     var num_train = Math.floor(this.train_ratio * N);
     this.folds = []; // flush folds, if any
     for (var i = 0; i < this.num_folds; i++) {
-      var p = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["d" /* randperm */])(N);
+      var p = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["e" /* randperm */])(N);
       this.folds.push({ train_ix: p.slice(0, num_train), test_ix: p.slice(num_train, N) });
     }
   }
@@ -1187,11 +1187,11 @@ let MagicNet = class MagicNet {
     // sample network topology and hyperparameters
     var layer_defs = [];
     layer_defs.push({ type: 'input', out_sx: 1, out_sy: 1, out_depth: input_depth });
-    var nl = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["e" /* weightedSample */])([0, 1, 2, 3], [0.2, 0.3, 0.3, 0.2]); // prefer nets with 1,2 hidden layers
+    var nl = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["f" /* weightedSample */])([0, 1, 2, 3], [0.2, 0.3, 0.3, 0.2]); // prefer nets with 1,2 hidden layers
     for (var q = 0; q < nl; q++) {
-      var ni = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["f" /* randi */])(this.neurons_min, this.neurons_max);
-      var act = ['tanh', 'maxout', 'relu'][__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["f" /* randi */])(0, 3)];
-      if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randf */])(0, 1) < 0.5) {
+      var ni = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randi */])(this.neurons_min, this.neurons_max);
+      var act = ['tanh', 'maxout', 'relu'][__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randi */])(0, 3)];
+      if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["h" /* randf */])(0, 1) < 0.5) {
         var dp = Math.random();
         layer_defs.push({ type: 'fc', num_neurons: ni, activation: act, drop_prob: dp });
       } else {
@@ -1203,11 +1203,11 @@ let MagicNet = class MagicNet {
     net.makeLayers(layer_defs);
 
     // sample training hyperparameters
-    var bs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["f" /* randi */])(this.batch_size_min, this.batch_size_max); // batch size
-    var l2 = Math.pow(10, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randf */])(this.l2_decay_min, this.l2_decay_max)); // l2 weight decay
-    var lr = Math.pow(10, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randf */])(this.learning_rate_min, this.learning_rate_max)); // learning rate
-    var mom = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randf */])(this.momentum_min, this.momentum_max); // momentum. Lets just use 0.9, works okay usually ;p
-    var tp = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randf */])(0, 1); // trainer type
+    var bs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randi */])(this.batch_size_min, this.batch_size_max); // batch size
+    var l2 = Math.pow(10, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["h" /* randf */])(this.l2_decay_min, this.l2_decay_max)); // l2 weight decay
+    var lr = Math.pow(10, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["h" /* randf */])(this.learning_rate_min, this.learning_rate_max)); // learning rate
+    var mom = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["h" /* randf */])(this.momentum_min, this.momentum_max); // momentum. Lets just use 0.9, works okay usually ;p
+    var tp = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["h" /* randf */])(0, 1); // trainer type
     var trainer_def;
     if (tp < 0.33) {
       trainer_def = { method: 'adadelta', batch_size: bs, l2_decay: l2 };
@@ -1245,7 +1245,7 @@ let MagicNet = class MagicNet {
 
     // step all candidates on a random data point
     var fold = this.folds[this.foldix]; // active fold
-    var dataix = fold.train_ix[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["f" /* randi */])(0, fold.train_ix.length)];
+    var dataix = fold.train_ix[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g" /* randi */])(0, fold.train_ix.length)];
     for (var k = 0; k < this.candidates.length; k++) {
       var x = this.data[dataix];
       var l = this.labels[dataix];
@@ -1371,7 +1371,7 @@ let MagicNet = class MagicNet {
   predict(data) {
     var xout = this.predict_soft(data);
     if (xout.w.length !== 0) {
-      var stats = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["h" /* maxmin */])(xout.w);
+      var stats = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["i" /* maxmin */])(xout.w);
       var predicted_label = stats.maxi;
     } else {
       var predicted_label = -1; // error out
@@ -1414,7 +1414,7 @@ let MagicNet = class MagicNet {
 };
 
 
-/* harmony default export */ exports["a"] = MagicNet;
+/* unused harmony default export */ var _unused_webpack_default_export = MagicNet;
 
 /***/ },
 /* 8 */
@@ -1575,7 +1575,7 @@ let Trainer = class Trainer {
 };
 
 
-/* harmony default export */ exports["a"] = Trainer;
+/* unused harmony default export */ var _unused_webpack_default_export = Trainer;
 
 /***/ },
 /* 9 */
@@ -3005,6 +3005,7 @@ function time() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
+/* unused harmony export ConvLayer */
 var _dec, _class;
 
 
@@ -3184,8 +3185,7 @@ let ConvLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_d
   }
 }) || _class);
 
-
-/* unused harmony default export */ var _unused_webpack_default_export = ConvLayer;
+//export default ConvLayer
 
 /***/ },
 /* 26 */
@@ -3471,11 +3471,11 @@ let InputLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_
     opt = opt || {};
 
     // required: depth
-    this.out_depth = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* getopt */])(opt, ['out_depth', 'depth'], 0);
+    this.out_depth = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* getopt */])(opt, ['out_depth', 'depth'], 0);
 
     // optional: default these dimensions to 1
-    this.out_sx = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* getopt */])(opt, ['out_sx', 'sx', 'width'], 1);
-    this.out_sy = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* getopt */])(opt, ['out_sy', 'sy', 'height'], 1);
+    this.out_sx = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* getopt */])(opt, ['out_sx', 'sx', 'width'], 1);
+    this.out_sy = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* getopt */])(opt, ['out_sy', 'sy', 'height'], 1);
 
     // computed
     this.layer_type = 'input';
@@ -4438,23 +4438,23 @@ let TanhLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_d
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
+/* empty harmony namespace reexport */
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__net__ = __webpack_require__(5);
+/* empty harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__magicnet__ = __webpack_require__(7);
+/* empty harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__trainer__ = __webpack_require__(8);
+/* empty harmony namespace reexport */
 
 
 
 
 
-/* harmony default export */ exports["default"] = {
-	Vol: __WEBPACK_IMPORTED_MODULE_0__vol__["a" /* default */],
-	Net: __WEBPACK_IMPORTED_MODULE_1__net__["a" /* default */],
-	MagicNet: __WEBPACK_IMPORTED_MODULE_2__magicnet__["a" /* default */],
-	Trainer: __WEBPACK_IMPORTED_MODULE_3__trainer__["a" /* default */],
-	SGDTrainer: __WEBPACK_IMPORTED_MODULE_3__trainer__["a" /* default */]
-};
+const SGDTrainer = Trainer;
+/* harmony export (immutable) */ exports["SGDTrainer"] = SGDTrainer;
+
 
 /***/ }
 /******/ ]);
