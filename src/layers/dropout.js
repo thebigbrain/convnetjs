@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 class DropoutLayer {
   constructor(opt) {
     opt = opt || {};
@@ -71,4 +68,3 @@ class DropoutLayer {
   }
 }
 
-export default DropoutLayer

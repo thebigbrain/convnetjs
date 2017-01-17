@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 class LocalResponseNormalizationLayer {
   constructor(opt) {
     var opt = opt || {};
@@ -113,4 +110,3 @@ class LocalResponseNormalizationLayer {
   }
 }
 
-export default LocalResponseNormalizationLayer

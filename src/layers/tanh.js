@@ -1,5 +1,3 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
 // a helper function, since tanh is not yet part of ECMAScript. Will be in v6.
@@ -12,7 +10,6 @@ function tanh(x) {
 // Implements Tanh nnonlinearity elementwise
 // x -> tanh(x) 
 // so the output is between -1 and 1.
-@decorate(register)
 class TanhLayer {
   constructor(opt) {
     var opt = opt || {};
@@ -66,5 +63,3 @@ class TanhLayer {
     this.layer_type = json.layer_type;
   }
 }
-
-export default TanhLayer

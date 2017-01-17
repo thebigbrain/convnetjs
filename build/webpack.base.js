@@ -7,7 +7,9 @@ const config = {
     entry: path.resolve('src/index.js'),
     output: {
         path: path.resolve('dist'),
-        filename: 'convnet.js'
+        filename: 'convnet.js',
+        library: 'convnetjs',
+        libraryTarget: 'umd'
     },
     module: {
         rules: [

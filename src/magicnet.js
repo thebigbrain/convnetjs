@@ -7,9 +7,9 @@ import {
   getopt,
   arrUnique
 } from './utils'
-import Net from './net'
+import * as Net from './net'
 
-class MagicNet {
+export class MagicNet {
   constructor(data, labels, opt) {
     var opt = opt || {};
     if (typeof data === 'undefined') { data = []; }
@@ -301,5 +301,3 @@ class MagicNet {
     // called when a batch of candidates has finished evaluating
   onFinishBatch(f) { this.finish_batch_callback = f; }
 }
-
-export default MagicNet

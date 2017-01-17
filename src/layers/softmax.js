@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 class SoftmaxLayer {
   constructor(opt) {
     opt = opt || {};
@@ -85,5 +82,3 @@ class SoftmaxLayer {
     this.num_inputs = json.num_inputs;
   }
 }
-
-export default SoftmaxLayer

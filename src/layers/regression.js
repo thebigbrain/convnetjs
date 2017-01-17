@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 class RegressionLayer {
   constructor(opt) {
     var opt = opt || {};
@@ -77,4 +74,3 @@ class RegressionLayer {
   }
 }
 
-export default RegressionLayer

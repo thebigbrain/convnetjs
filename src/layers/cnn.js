@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 export class ConvLayer {
   constructor(opt) {
     var opt = opt || {};
@@ -169,5 +166,3 @@ export class ConvLayer {
       this.biases.fromJSON(json.biases);
     }
 }
-
-//export default ConvLayer

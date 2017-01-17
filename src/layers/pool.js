@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 class PoolLayer {
   constructor(opt) {
     var opt = opt || {};
@@ -128,4 +125,3 @@ class PoolLayer {
   }
 }
 
-export default PoolLayer

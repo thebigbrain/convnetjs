@@ -1,11 +1,10 @@
 import Vol from './vol' // convenience
 import { assert } from './utils'
 import { createLayer } from './layer-factory'
-import './layers'
 
 // Net manages a set of layers
 // For now constraints: Simple linear order of layers, first layer input last layer a cost layer
-class Net {
+export class Net {
   constructor(options) {
     this.layers = [];
   }
@@ -71,50 +70,7 @@ class Net {
         def.in_sy = prev.out_sy;
         def.in_depth = prev.out_depth;
       }
-
-      switch (def.type) {
-        case 'fc':
-          this.layers.push(new FullyConnLayer(def));
-          break;
-        case 'lrn':
-          this.layers.push(new LocalResponseNormalizationLayer(def));
-          break;
-        case 'dropout':
-          this.layers.push(new DropoutLayer(def));
-          break;
-        case 'input':
-          this.layers.push(new InputLayer(def));
-          break;
-        case 'softmax':
-          this.layers.push(new SoftmaxLayer(def));
-          break;
-        case 'regression':
-          this.layers.push(new RegressionLayer(def));
-          break;
-        case 'conv':
-          this.layers.push(new ConvLayer(def));
-          break;
-        case 'pool':
-          this.layers.push(new PoolLayer(def));
-          break;
-        case 'relu':
-          this.layers.push(new ReluLayer(def));
-          break;
-        case 'sigmoid':
-          this.layers.push(new SigmoidLayer(def));
-          break;
-        case 'tanh':
-          this.layers.push(new TanhLayer(def));
-          break;
-        case 'maxout':
-          this.layers.push(new MaxoutLayer(def));
-          break;
-        case 'svm':
-          this.layers.push(new SVMLayer(def));
-          break;
-        default:
-          console.log('ERROR: UNRECOGNIZED LAYER TYPE: ' + def.type);
-      }
+      this.layers.push(createLayer(def.type))
     }
   }
 
@@ -191,24 +147,10 @@ class Net {
     for (var i = 0; i < json.layers.length; i++) {
       var Lj = json.layers[i]
       var t = Lj.layer_type;
-      var L;
-      if (t === 'input') { L = new InputLayer(); }
-      if (t === 'relu') { L = new ReluLayer(); }
-      if (t === 'sigmoid') { L = new SigmoidLayer(); }
-      if (t === 'tanh') { L = new TanhLayer(); }
-      if (t === 'dropout') { L = new DropoutLayer(); }
-      if (t === 'conv') { L = new ConvLayer(); }
-      if (t === 'pool') { L = new PoolLayer(); }
-      if (t === 'lrn') { L = new LocalResponseNormalizationLayer(); }
-      if (t === 'softmax') { L = new SoftmaxLayer(); }
-      if (t === 'regression') { L = new RegressionLayer(); }
-      if (t === 'fc') { L = new FullyConnLayer(); }
-      if (t === 'maxout') { L = new MaxoutLayer(); }
-      if (t === 'svm') { L = new SVMLayer(); }
+      var L = createLayer(t);
       L.fromJSON(Lj);
       this.layers.push(L);
     }
   }
 }
 
-export default Net

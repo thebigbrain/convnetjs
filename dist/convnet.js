@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["convnetjs"] = factory();
+	else
+		root["convnetjs"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -63,7 +73,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,7 +81,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Vol; });
 
 
 // Vol is the basic building block of all data in a net.
@@ -206,312 +217,10 @@ let Vol = class Vol {
   }
 };
 
-
-/* harmony default export */ exports["a"] = Vol;
+/* harmony default export */ exports["b"] = Vol;
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-var _slice = Array.prototype.slice;
-
-var _createDecoratedClass = function () {
-  function defineProperties(target, descriptors, initializers) {
-    for (var i = 0; i < descriptors.length; i++) {
-      var descriptor = descriptors[i];var decorators = descriptor.decorators;var key = descriptor.key;delete descriptor.key;delete descriptor.decorators;descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor || descriptor.initializer) descriptor.writable = true;if (decorators) {
-        for (var f = 0; f < decorators.length; f++) {
-          var decorator = decorators[f];if (typeof decorator === 'function') {
-            descriptor = decorator(target, key, descriptor) || descriptor;
-          } else {
-            throw new TypeError('The decorator for method ' + descriptor.key + ' is of the invalid type ' + typeof decorator);
-          }
-        }if (descriptor.initializer !== undefined) {
-          initializers[key] = descriptor;continue;
-        }
-      }Object.defineProperty(target, key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps, protoInitializers, staticInitializers) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps, protoInitializers);if (staticProps) defineProperties(Constructor, staticProps, staticInitializers);return Constructor;
-  };
-}();
-
-exports.isDescriptor = isDescriptor;
-exports.decorate = decorate;
-exports.metaFor = metaFor;
-exports.getOwnPropertyDescriptors = getOwnPropertyDescriptors;
-exports.createDefaultSetter = createDefaultSetter;
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { 'default': obj };
-}
-
-function _toConsumableArray(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];return arr2;
-  } else {
-    return Array.from(arr);
-  }
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-function _defineDecoratedPropertyDescriptor(target, key, descriptors) {
-  var _descriptor = descriptors[key];if (!_descriptor) return;var descriptor = {};for (var _key in _descriptor) descriptor[_key] = _descriptor[_key];descriptor.value = descriptor.initializer ? descriptor.initializer.call(target) : undefined;Object.defineProperty(target, key, descriptor);
-}
-
-var _lazyInitialize = __webpack_require__(6);
-
-var _lazyInitialize2 = _interopRequireDefault(_lazyInitialize);
-
-var defineProperty = Object.defineProperty;
-var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-var getOwnPropertyNames = Object.getOwnPropertyNames;
-var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-
-function isDescriptor(desc) {
-  if (!desc || !desc.hasOwnProperty) {
-    return false;
-  }
-
-  var keys = ['value', 'initializer', 'get', 'set'];
-
-  for (var i = 0, l = keys.length; i < l; i++) {
-    if (desc.hasOwnProperty(keys[i])) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function decorate(handleDescriptor, entryArgs) {
-  if (isDescriptor(entryArgs[entryArgs.length - 1])) {
-    return handleDescriptor.apply(undefined, _toConsumableArray(entryArgs).concat([[]]));
-  } else {
-    return function () {
-      return handleDescriptor.apply(undefined, _slice.call(arguments).concat([entryArgs]));
-    };
-  }
-}
-
-var Meta = function () {
-  var _instanceInitializers = {};
-
-  function Meta() {
-    _classCallCheck(this, Meta);
-
-    _defineDecoratedPropertyDescriptor(this, 'debounceTimeoutIds', _instanceInitializers);
-
-    _defineDecoratedPropertyDescriptor(this, 'throttleTimeoutIds', _instanceInitializers);
-
-    _defineDecoratedPropertyDescriptor(this, 'throttlePreviousTimestamps', _instanceInitializers);
-
-    _defineDecoratedPropertyDescriptor(this, 'throttleTrailingArgs', _instanceInitializers);
-  }
-
-  _createDecoratedClass(Meta, [{
-    key: 'debounceTimeoutIds',
-    decorators: [_lazyInitialize2['default']],
-    initializer: function initializer() {
-      return {};
-    },
-    enumerable: true
-  }, {
-    key: 'throttleTimeoutIds',
-    decorators: [_lazyInitialize2['default']],
-    initializer: function initializer() {
-      return {};
-    },
-    enumerable: true
-  }, {
-    key: 'throttlePreviousTimestamps',
-    decorators: [_lazyInitialize2['default']],
-    initializer: function initializer() {
-      return {};
-    },
-    enumerable: true
-  }, {
-    key: 'throttleTrailingArgs',
-    decorators: [_lazyInitialize2['default']],
-    initializer: function initializer() {
-      return null;
-    },
-    enumerable: true
-  }], null, _instanceInitializers);
-
-  return Meta;
-}();
-
-var META_KEY = typeof Symbol === 'function' ? Symbol('__core_decorators__') : '__core_decorators__';
-
-function metaFor(obj) {
-  if (obj.hasOwnProperty(META_KEY) === false) {
-    defineProperty(obj, META_KEY, {
-      // Defaults: NOT enumerable, configurable, or writable
-      value: new Meta()
-    });
-  }
-
-  return obj[META_KEY];
-}
-
-var getOwnKeys = getOwnPropertySymbols ? function (object) {
-  return getOwnPropertyNames(object).concat(getOwnPropertySymbols(object));
-} : getOwnPropertyNames;
-
-exports.getOwnKeys = getOwnKeys;
-
-function getOwnPropertyDescriptors(obj) {
-  var descs = {};
-
-  getOwnKeys(obj).forEach(function (key) {
-    return descs[key] = getOwnPropertyDescriptor(obj, key);
-  });
-
-  return descs;
-}
-
-function createDefaultSetter(key) {
-  return function set(newValue) {
-    Object.defineProperty(this, key, {
-      configurable: true,
-      writable: true,
-      // IS enumerable when reassigned by the outside word
-      enumerable: true,
-      value: newValue
-    });
-
-    return newValue;
-  };
-}
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-let layers = {};
-
-const createLayer = def => {
-	if (layers(def.type)) return new layers(def.type)(def);
-	throw new Error(`UNRECOGNIZED LAYER TYPE: ${ def.type }`);
-};
-/* unused harmony export createLayer */
-
-
-const register = (type, Layer) => {
-	if (layers[type]) throw new Error(`layer ${ type } has been registered`);
-	layers[type] = Layer;
-};
-/* harmony export (immutable) */ exports["a"] = register;
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * core-decorators.js
- * (c) 2016 Jay Phelps and contributors
- * MIT Licensed
- * https://github.com/jayphelps/core-decorators.js
- * @license
- */
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-function _interopRequire(obj) {
-  return obj && obj.__esModule ? obj['default'] : obj;
-}
-
-var _override = __webpack_require__(20);
-
-exports.override = _interopRequire(_override);
-
-var _deprecate = __webpack_require__(13);
-
-exports.deprecate = _interopRequire(_deprecate);
-exports.deprecated = _interopRequire(_deprecate);
-
-var _suppressWarnings = __webpack_require__(22);
-
-exports.suppressWarnings = _interopRequire(_suppressWarnings);
-
-var _memoize = __webpack_require__(16);
-
-exports.memoize = _interopRequire(_memoize);
-
-var _autobind = __webpack_require__(10);
-
-exports.autobind = _interopRequire(_autobind);
-
-var _readonly = __webpack_require__(21);
-
-exports.readonly = _interopRequire(_readonly);
-
-var _enumerable = __webpack_require__(14);
-
-exports.enumerable = _interopRequire(_enumerable);
-
-var _nonenumerable = __webpack_require__(19);
-
-exports.nonenumerable = _interopRequire(_nonenumerable);
-
-var _nonconfigurable = __webpack_require__(18);
-
-exports.nonconfigurable = _interopRequire(_nonconfigurable);
-
-var _debounce = __webpack_require__(11);
-
-exports.debounce = _interopRequire(_debounce);
-
-var _throttle = __webpack_require__(23);
-
-exports.throttle = _interopRequire(_throttle);
-
-var _decorate = __webpack_require__(12);
-
-exports.decorate = _interopRequire(_decorate);
-
-var _mixin = __webpack_require__(17);
-
-exports.mixin = _interopRequire(_mixin);
-exports.mixins = _interopRequire(_mixin);
-
-var _lazyInitialize = __webpack_require__(6);
-
-exports.lazyInitialize = _interopRequire(_lazyInitialize);
-
-var _time = __webpack_require__(24);
-
-exports.time = _interopRequire(_time);
-
-var _extendDescriptor = __webpack_require__(15);
-
-exports.extendDescriptor = _interopRequire(_extendDescriptor);
-
-// Helper to apply decorators to a class without transpiler support
-
-var _applyDecorators = __webpack_require__(9);
-
-exports.applyDecorators = _interopRequire(_applyDecorators);
-
-/***/ },
-/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -699,7 +408,7 @@ const augment = function (V, crop, dx, dy, fliplr) {
   // randomly sample a crop in the input volume
   var W;
   if (crop !== V.sx || dx !== 0 || dy !== 0) {
-    W = new __WEBPACK_IMPORTED_MODULE_0__vol__["a" /* default */](crop, crop, V.depth, 0.0);
+    W = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](crop, crop, V.depth, 0.0);
     for (var x = 0; x < crop; x++) {
       for (var y = 0; y < crop; y++) {
         if (x + dx < 0 || x + dx >= V.sx || y + dy < 0 || y + dy >= V.sy) continue; // oob
@@ -768,12 +477,12 @@ const img_to_vol = function (img, convert_grayscale) {
   for (var i = 0; i < p.length; i++) {
     pv.push(p[i] / 255.0 - 0.5); // normalize image pixels to [-0.5, 0.5]
   }
-  var x = new __WEBPACK_IMPORTED_MODULE_0__vol__["a" /* default */](W, H, 4, 0.0); //input volume (image)
+  var x = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](W, H, 4, 0.0); //input volume (image)
   x.w = pv;
 
   if (convert_grayscale) {
     // flatten into depth=1 array
-    var x1 = new __WEBPACK_IMPORTED_MODULE_0__vol__["a" /* default */](W, H, 1, 0.0);
+    var x1 = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](W, H, 1, 0.0);
     for (var i = 0; i < W; i++) {
       for (var j = 0; j < H; j++) {
         x1.set(i, j, 0, x.get(i, j, 0));
@@ -786,16 +495,16 @@ const img_to_vol = function (img, convert_grayscale) {
 };
 
 /***/ },
-/* 5 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__layers__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layer_factory__ = __webpack_require__(5);
+/* harmony export (binding) */ __webpack_require__.d(exports, "Net", function() { return Net; });
  // convenience
-
 
 
 
@@ -874,50 +583,7 @@ let Net = class Net {
         def.in_sy = prev.out_sy;
         def.in_depth = prev.out_depth;
       }
-
-      switch (def.type) {
-        case 'fc':
-          this.layers.push(new FullyConnLayer(def));
-          break;
-        case 'lrn':
-          this.layers.push(new LocalResponseNormalizationLayer(def));
-          break;
-        case 'dropout':
-          this.layers.push(new DropoutLayer(def));
-          break;
-        case 'input':
-          this.layers.push(new InputLayer(def));
-          break;
-        case 'softmax':
-          this.layers.push(new SoftmaxLayer(def));
-          break;
-        case 'regression':
-          this.layers.push(new RegressionLayer(def));
-          break;
-        case 'conv':
-          this.layers.push(new ConvLayer(def));
-          break;
-        case 'pool':
-          this.layers.push(new PoolLayer(def));
-          break;
-        case 'relu':
-          this.layers.push(new ReluLayer(def));
-          break;
-        case 'sigmoid':
-          this.layers.push(new SigmoidLayer(def));
-          break;
-        case 'tanh':
-          this.layers.push(new TanhLayer(def));
-          break;
-        case 'maxout':
-          this.layers.push(new MaxoutLayer(def));
-          break;
-        case 'svm':
-          this.layers.push(new SVMLayer(def));
-          break;
-        default:
-          console.log('ERROR: UNRECOGNIZED LAYER TYPE: ' + def.type);
-      }
+      this.layers.push(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__layer_factory__["a" /* createLayer */])(def.type));
     }
   }
 
@@ -995,121 +661,21 @@ let Net = class Net {
     for (var i = 0; i < json.layers.length; i++) {
       var Lj = json.layers[i];
       var t = Lj.layer_type;
-      var L;
-      if (t === 'input') {
-        L = new InputLayer();
-      }
-      if (t === 'relu') {
-        L = new ReluLayer();
-      }
-      if (t === 'sigmoid') {
-        L = new SigmoidLayer();
-      }
-      if (t === 'tanh') {
-        L = new TanhLayer();
-      }
-      if (t === 'dropout') {
-        L = new DropoutLayer();
-      }
-      if (t === 'conv') {
-        L = new ConvLayer();
-      }
-      if (t === 'pool') {
-        L = new PoolLayer();
-      }
-      if (t === 'lrn') {
-        L = new LocalResponseNormalizationLayer();
-      }
-      if (t === 'softmax') {
-        L = new SoftmaxLayer();
-      }
-      if (t === 'regression') {
-        L = new RegressionLayer();
-      }
-      if (t === 'fc') {
-        L = new FullyConnLayer();
-      }
-      if (t === 'maxout') {
-        L = new MaxoutLayer();
-      }
-      if (t === 'svm') {
-        L = new SVMLayer();
-      }
+      var L = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__layer_factory__["a" /* createLayer */])(t);
       L.fromJSON(Lj);
       this.layers.push(L);
     }
   }
 };
 
-
-/* harmony default export */ exports["a"] = Net;
-
 /***/ },
-/* 6 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports['default'] = lazyInitialize;
-
-var _privateUtils = __webpack_require__(1);
-
-var defineProperty = Object.defineProperty;
-
-function handleDescriptor(target, key, descriptor) {
-  var configurable = descriptor.configurable;
-  var enumerable = descriptor.enumerable;
-  var initializer = descriptor.initializer;
-  var value = descriptor.value;
-
-  return {
-    configurable: configurable,
-    enumerable: enumerable,
-
-    get: function get() {
-      // This happens if someone accesses the
-      // property directly on the prototype
-      if (this === target) {
-        return;
-      }
-
-      var ret = initializer ? initializer.call(this) : value;
-
-      defineProperty(this, key, {
-        configurable: configurable,
-        enumerable: enumerable,
-        writable: true,
-        value: ret
-      });
-
-      return ret;
-    },
-
-    set: (0, _privateUtils.createDefaultSetter)(key)
-  };
-}
-
-function lazyInitialize() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__net__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__net__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return MagicNet; });
 
 
 
@@ -1199,7 +765,7 @@ let MagicNet = class MagicNet {
       }
     }
     layer_defs.push({ type: 'softmax', num_classes: num_classes });
-    var net = new __WEBPACK_IMPORTED_MODULE_1__net__["a" /* default */]();
+    var net = new __WEBPACK_IMPORTED_MODULE_1__net__();
     net.makeLayers(layer_defs);
 
     // sample training hyperparameters
@@ -1295,7 +861,7 @@ let MagicNet = class MagicNet {
         // we will go on to another fold. reset all candidates nets
         for (var k = 0; k < this.candidates.length; k++) {
           var c = this.candidates[k];
-          var net = new __WEBPACK_IMPORTED_MODULE_1__net__["a" /* default */]();
+          var net = new __WEBPACK_IMPORTED_MODULE_1__net__();
           net.makeLayers(c.layer_defs);
           var trainer = new Trainer(net, c.trainer_def);
           c.net = net;
@@ -1394,7 +960,7 @@ let MagicNet = class MagicNet {
     this.ensemble_size = json.nets.length;
     this.evaluated_candidates = [];
     for (var i = 0; i < this.ensemble_size; i++) {
-      var net = new __WEBPACK_IMPORTED_MODULE_1__net__["a" /* default */]();
+      var net = new __WEBPACK_IMPORTED_MODULE_1__net__();
       net.fromJSON(json.nets[i]);
       var dummy_candidate = {};
       dummy_candidate.net = net;
@@ -1413,16 +979,14 @@ let MagicNet = class MagicNet {
   }
 };
 
-
-/* unused harmony default export */ var _unused_webpack_default_export = MagicNet;
-
 /***/ },
-/* 8 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Trainer; });
 
 
 
@@ -1574,1445 +1138,58 @@ let Trainer = class Trainer {
   }
 };
 
+const SGDTrainer = Trainer;
+/* harmony export (immutable) */ exports["b"] = SGDTrainer;
 
-/* unused harmony default export */ var _unused_webpack_default_export = Trainer;
 
 /***/ },
-/* 9 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layers__ = __webpack_require__(9);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = applyDecorators;
-var defineProperty = Object.defineProperty;
-var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+let layers = {};
 
-function applyDecorators(Class, props) {
-  var prototype = Class.prototype;
-
-  for (var key in props) {
-    var decorators = props[key];
-
-    for (var i = 0, l = decorators.length; i < l; i++) {
-      var decorator = decorators[i];
-
-      defineProperty(prototype, key, decorator(prototype, key, getOwnPropertyDescriptor(prototype, key)));
-    }
-  }
-
-  return Class;
-}
-
-module.exports = exports["default"];
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports['default'] = autobind;
-
-function _toConsumableArray(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];return arr2;
-  } else {
-    return Array.from(arr);
-  }
-}
-
-var _privateUtils = __webpack_require__(1);
-
-var defineProperty = Object.defineProperty;
-var getPrototypeOf = Object.getPrototypeOf;
-
-function bind(fn, context) {
-  if (fn.bind) {
-    return fn.bind(context);
-  } else {
-    return function __autobind__() {
-      return fn.apply(context, arguments);
-    };
-  }
-}
-
-var mapStore = undefined;
-
-function getBoundSuper(obj, fn) {
-  if (typeof WeakMap === 'undefined') {
-    throw new Error('Using @autobind on ' + fn.name + '() requires WeakMap support due to its use of super.' + fn.name + '()\n      See https://github.com/jayphelps/core-decorators.js/issues/20');
-  }
-
-  if (!mapStore) {
-    mapStore = new WeakMap();
-  }
-
-  if (mapStore.has(obj) === false) {
-    mapStore.set(obj, new WeakMap());
-  }
-
-  var superStore = mapStore.get(obj);
-
-  if (superStore.has(fn) === false) {
-    superStore.set(fn, bind(fn, obj));
-  }
-
-  return superStore.get(fn);
-}
-
-function autobindClass(klass) {
-  var descs = (0, _privateUtils.getOwnPropertyDescriptors)(klass.prototype);
-  var keys = (0, _privateUtils.getOwnKeys)(descs);
-
-  for (var i = 0, l = keys.length; i < l; i++) {
-    var key = keys[i];
-    var desc = descs[key];
-
-    if (typeof desc.value !== 'function' || key === 'constructor') {
-      continue;
-    }
-
-    defineProperty(klass.prototype, key, autobindMethod(klass.prototype, key, desc));
-  }
-}
-
-function autobindMethod(target, key, _ref) {
-  var fn = _ref.value;
-  var configurable = _ref.configurable;
-  var enumerable = _ref.enumerable;
-
-  if (typeof fn !== 'function') {
-    throw new SyntaxError('@autobind can only be used on functions, not: ' + fn);
-  }
-
-  var constructor = target.constructor;
-
-  return {
-    configurable: configurable,
-    enumerable: enumerable,
-
-    get: function get() {
-      // Class.prototype.key lookup
-      // Someone accesses the property directly on the prototype on which it is
-      // actually defined on, i.e. Class.prototype.hasOwnProperty(key)
-      if (this === target) {
-        return fn;
-      }
-
-      // Class.prototype.key lookup
-      // Someone accesses the property directly on a prototype but it was found
-      // up the chain, not defined directly on it
-      // i.e. Class.prototype.hasOwnProperty(key) == false && key in Class.prototype
-      if (this.constructor !== constructor && getPrototypeOf(this).constructor === constructor) {
-        return fn;
-      }
-
-      // Autobound method calling super.sameMethod() which is also autobound and so on.
-      if (this.constructor !== constructor && key in this.constructor.prototype) {
-        return getBoundSuper(this, fn);
-      }
-
-      var boundFn = bind(fn, this);
-
-      defineProperty(this, key, {
-        configurable: true,
-        writable: true,
-        // NOT enumerable when it's a bound method
-        enumerable: false,
-        value: boundFn
-      });
-
-      return boundFn;
-    },
-    set: (0, _privateUtils.createDefaultSetter)(key)
-  };
-}
-
-function handle(args) {
-  if (args.length === 1) {
-    return autobindClass.apply(undefined, _toConsumableArray(args));
-  } else {
-    return autobindMethod.apply(undefined, _toConsumableArray(args));
-  }
-}
-
-function autobind() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  if (args.length === 0) {
-    return function () {
-      return handle(arguments);
-    };
-  } else {
-    return handle(args);
-  }
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];var _n = true;var _d = false;var _e = undefined;try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;_e = err;
-    } finally {
-      try {
-        if (!_n && _i['return']) _i['return']();
-      } finally {
-        if (_d) throw _e;
-      }
-    }return _arr;
-  }return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError('Invalid attempt to destructure non-iterable instance');
-    }
-  };
-}();
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
+const createLayer = def => {
+	if (layers(def.type)) return new layers(def.type)(def);
+	throw new Error(`UNRECOGNIZED LAYER TYPE: ${ def.type }`);
 };
-
-exports['default'] = debounce;
-
-var _privateUtils = __webpack_require__(1);
-
-var DEFAULT_TIMEOUT = 300;
-
-function handleDescriptor(target, key, descriptor, _ref) {
-  var _ref2 = _slicedToArray(_ref, 2);
-
-  var _ref2$0 = _ref2[0];
-  var wait = _ref2$0 === undefined ? DEFAULT_TIMEOUT : _ref2$0;
-  var _ref2$1 = _ref2[1];
-  var immediate = _ref2$1 === undefined ? false : _ref2$1;
-
-  var callback = descriptor.value;
-
-  if (typeof callback !== 'function') {
-    throw new SyntaxError('Only functions can be debounced');
-  }
-
-  return _extends({}, descriptor, {
-    value: function value() {
-      var _this = this;
-
-      var _metaFor = (0, _privateUtils.metaFor)(this);
-
-      var debounceTimeoutIds = _metaFor.debounceTimeoutIds;
-
-      var timeout = debounceTimeoutIds[key];
-      var callNow = immediate && !timeout;
-      var args = arguments;
-
-      clearTimeout(timeout);
-
-      debounceTimeoutIds[key] = setTimeout(function () {
-        delete debounceTimeoutIds[key];
-        if (!immediate) {
-          callback.apply(_this, args);
-        }
-      }, wait);
-
-      if (callNow) {
-        callback.apply(this, args);
-      }
-    }
-  });
-}
-
-function debounce() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
+/* harmony export (immutable) */ exports["a"] = createLayer;
 
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports['default'] = decorate;
-
-function _toConsumableArray(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];return arr2;
-  } else {
-    return Array.from(arr);
-  }
-}
-
-function _toArray(arr) {
-  return Array.isArray(arr) ? arr : Array.from(arr);
-}
-
-var _privateUtils = __webpack_require__(1);
-
-var defineProperty = Object.defineProperty;
-
-function handleDescriptor(target, key, descriptor, _ref) {
-  var _ref2 = _toArray(_ref);
-
-  var decorator = _ref2[0];
-
-  var args = _ref2.slice(1);
-
-  var configurable = descriptor.configurable;
-  var enumerable = descriptor.enumerable;
-  var writable = descriptor.writable;
-
-  var originalGet = descriptor.get;
-  var originalSet = descriptor.set;
-  var originalValue = descriptor.value;
-  var isGetter = !!originalGet;
-
-  return {
-    configurable: configurable,
-    enumerable: enumerable,
-    get: function get() {
-      var fn = isGetter ? originalGet.call(this) : originalValue;
-      var value = decorator.call.apply(decorator, [this, fn].concat(_toConsumableArray(args)));
-
-      if (isGetter) {
-        return value;
-      } else {
-        var desc = {
-          configurable: configurable,
-          enumerable: enumerable
-        };
-
-        desc.value = value;
-        desc.writable = writable;
-
-        defineProperty(this, key, desc);
-
-        return value;
-      }
-    },
-    set: isGetter ? originalSet : (0, _privateUtils.createDefaultSetter)()
-  };
-}
-
-function decorate() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];var _n = true;var _d = false;var _e = undefined;try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;_e = err;
-    } finally {
-      try {
-        if (!_n && _i['return']) _i['return']();
-      } finally {
-        if (_d) throw _e;
-      }
-    }return _arr;
-  }return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError('Invalid attempt to destructure non-iterable instance');
-    }
-  };
-}();
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
+const register = (type, Layer) => {
+	if (layers[type]) throw new Error(`layer ${ type } has been registered`);
+	layers[type] = Layer;
 };
+/* unused harmony export register */
 
-exports['default'] = deprecate;
 
-var _privateUtils = __webpack_require__(1);
-
-var DEFAULT_MSG = 'This function will be removed in future versions.';
-
-function handleDescriptor(target, key, descriptor, _ref) {
-  var _ref2 = _slicedToArray(_ref, 2);
-
-  var _ref2$0 = _ref2[0];
-  var msg = _ref2$0 === undefined ? DEFAULT_MSG : _ref2$0;
-  var _ref2$1 = _ref2[1];
-  var options = _ref2$1 === undefined ? {} : _ref2$1;
-
-  if (typeof descriptor.value !== 'function') {
-    throw new SyntaxError('Only functions can be marked as deprecated');
-  }
-
-  var methodSignature = target.constructor.name + '#' + key;
-
-  if (options.url) {
-    msg += '\n\n    See ' + options.url + ' for more details.\n\n';
-  }
-
-  return _extends({}, descriptor, {
-    value: function deprecationWrapper() {
-      console.warn('DEPRECATION ' + methodSignature + ': ' + msg);
-      return descriptor.value.apply(this, arguments);
-    }
-  });
-}
-
-function deprecate() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
+register('fc', __WEBPACK_IMPORTED_MODULE_0__layers__["FullyConnLayer"]);
+register('conv', __WEBPACK_IMPORTED_MODULE_0__layers__["ConvLayer"]);
+register('sigmoid', __WEBPACK_IMPORTED_MODULE_0__layers__["SigmoidLayer"]);
+register('dropout', __WEBPACK_IMPORTED_MODULE_0__layers__["DropoutLayer"]);
+register('input', __WEBPACK_IMPORTED_MODULE_0__layers__["InputLayer"]);
+register('lrn', __WEBPACK_IMPORTED_MODULE_0__layers__["LocalResponseNormalizationLayer"]);
+register('maxout', __WEBPACK_IMPORTED_MODULE_0__layers__["MaxoutLayer"]);
+register('pool', __WEBPACK_IMPORTED_MODULE_0__layers__["PoolLayer"]);
+register('regression', __WEBPACK_IMPORTED_MODULE_0__layers__["RegressionLayer"]);
+register('relu', __WEBPACK_IMPORTED_MODULE_0__layers__["ReluLayer"]);
+register('svm', __WEBPACK_IMPORTED_MODULE_0__layers__["SVMLayer"]);
+register('tanh', __WEBPACK_IMPORTED_MODULE_0__layers__["TanhLayer"]);
+register('softmax', __WEBPACK_IMPORTED_MODULE_0__layers__["SoftmaxLayer"]);
 
 /***/ },
-/* 14 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ConvLayer; });
 
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports['default'] = enumerable;
-
-var _privateUtils = __webpack_require__(1);
-
-function handleDescriptor(target, key, descriptor) {
-  descriptor.enumerable = true;
-  return descriptor;
-}
-
-function enumerable() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
-exports['default'] = extendDescriptor;
-
-var _privateUtils = __webpack_require__(1);
-
-var getPrototypeOf = Object.getPrototypeOf;
-var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-
-function handleDescriptor(target, key, descriptor) {
-  var superKlass = getPrototypeOf(target);
-  var superDesc = getOwnPropertyDescriptor(superKlass, key);
-
-  return _extends({}, superDesc, {
-    value: descriptor.value,
-    initializer: descriptor.initializer,
-    get: descriptor.get || superDesc.get,
-    set: descriptor.set || superDesc.set
-  });
-}
-
-function extendDescriptor() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
-exports['default'] = memoize;
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }return obj;
-}
-
-var _privateUtils = __webpack_require__(1);
-
-function toObject(cache, value) {
-  if (value === Object(value)) {
-    return value;
-  }
-  return cache[value] || (cache[value] = {});
-}
-
-function applyAndCache(context, fn, args, cache, signature) {
-  var ret = fn.apply(context, args);
-  cache[signature] = ret;
-  return ret;
-}
-
-function metaForDescriptor(descriptor) {
-  var fn = undefined,
-      wrapKey = undefined;
-
-  // This is ugly code, but way faster than other
-  // ways I tried that *looked* pretty
-
-  if (descriptor.value) {
-    fn = descriptor.value;
-    wrapKey = 'value';
-  } else if (descriptor.get) {
-    fn = descriptor.get;
-    wrapKey = 'get';
-  } else if (descriptor.set) {
-    fn = descriptor.set;
-    wrapKey = 'set';
-  }
-
-  return { fn: fn, wrapKey: wrapKey };
-}
-
-function handleDescriptor(target, key, descriptor) {
-  console.warn('DEPRECATION: @memoize is deprecated and will be removed shortly. Use @decorate with lodash\'s memoize helper.\n\n  https://github.com/jayphelps/core-decorators.js#decorate');
-
-  var _metaForDescriptor = metaForDescriptor(descriptor);
-
-  var fn = _metaForDescriptor.fn;
-  var wrapKey = _metaForDescriptor.wrapKey;
-
-  var argumentCache = new WeakMap();
-  var signatureCache = Object.create(null);
-  var primativeRefCache = Object.create(null);
-  var argumentIdCounter = 0;
-
-  return _extends({}, descriptor, _defineProperty({}, wrapKey, function memoizeWrapper() {
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var signature = '0';
-
-    for (var i = 0, l = args.length; i < l; i++) {
-      var arg = args[i];
-      var argRef = toObject(primativeRefCache, arg);
-      var argKey = argumentCache.get(argRef);
-
-      if (argKey === undefined) {
-        argKey = ++argumentIdCounter;
-        argumentCache.set(argRef, argKey);
-      }
-
-      signature += argKey;
-    }
-
-    return signatureCache[signature] || applyAndCache(this, fn, arguments, signatureCache, signature);
-  }));
-}
-
-function memoize() {
-  for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-    args[_key2] = arguments[_key2];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports['default'] = mixin;
-
-var _privateUtils = __webpack_require__(1);
-
-var defineProperty = Object.defineProperty;
-var getPrototypeOf = Object.getPrototypeOf;
-
-function buggySymbol(symbol) {
-  return Object.prototype.toString.call(symbol) === '[object Symbol]' && typeof symbol === 'object';
-}
-
-function hasProperty(prop, obj) {
-  // We have to traverse manually prototypes' chain for polyfilled ES6 Symbols
-  // like "in" operator does.
-  // I.e.: Babel 5 Symbol polyfill stores every created symbol in Object.prototype.
-  // That's why we cannot use construction like "prop in obj" to check, if needed
-  // prop actually exists in given object/prototypes' chain.
-  if (buggySymbol(prop)) {
-    do {
-      if (obj === Object.prototype) {
-        // Polyfill assigns undefined as value for stored symbol key.
-        // We can assume in this special case if there is nothing assigned it doesn't exist.
-        return typeof obj[prop] !== 'undefined';
-      }
-      if (obj.hasOwnProperty(prop)) {
-        return true;
-      }
-    } while (obj = getPrototypeOf(obj));
-    return false;
-  } else {
-    return prop in obj;
-  }
-}
-
-function handleClass(target, mixins) {
-  if (!mixins.length) {
-    throw new SyntaxError('@mixin() class ' + target.name + ' requires at least one mixin as an argument');
-  }
-
-  for (var i = 0, l = mixins.length; i < l; i++) {
-    var descs = (0, _privateUtils.getOwnPropertyDescriptors)(mixins[i]);
-    var keys = (0, _privateUtils.getOwnKeys)(descs);
-
-    for (var j = 0, k = keys.length; j < k; j++) {
-      var key = keys[j];
-
-      if (!hasProperty(key, target.prototype)) {
-        defineProperty(target.prototype, key, descs[key]);
-      }
-    }
-  }
-}
-
-function mixin() {
-  for (var _len = arguments.length, mixins = Array(_len), _key = 0; _key < _len; _key++) {
-    mixins[_key] = arguments[_key];
-  }
-
-  if (typeof mixins[0] === 'function') {
-    return handleClass(mixins[0], []);
-  } else {
-    return function (target) {
-      return handleClass(target, mixins);
-    };
-  }
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports['default'] = nonconfigurable;
-
-var _privateUtils = __webpack_require__(1);
-
-function handleDescriptor(target, key, descriptor) {
-  descriptor.configurable = false;
-  return descriptor;
-}
-
-function nonconfigurable() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports['default'] = nonenumerable;
-
-var _privateUtils = __webpack_require__(1);
-
-function handleDescriptor(target, key, descriptor) {
-  descriptor.enumerable = false;
-  return descriptor;
-}
-
-function nonenumerable() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-  };
-}();
-
-exports['default'] = override;
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-var _privateUtils = __webpack_require__(1);
-
-var GENERIC_FUNCTION_ERROR = '{child} does not properly override {parent}';
-var FUNCTION_REGEXP = /^function ([_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*)?(\([^\)]*\))[\s\S]+$/;
-
-var SyntaxErrorReporter = function () {
-  _createClass(SyntaxErrorReporter, [{
-    key: '_getTopic',
-    value: function _getTopic(descriptor) {
-      if (descriptor === undefined) {
-        return null;
-      }
-
-      if ('value' in descriptor) {
-        return descriptor.value;
-      }
-
-      if ('get' in descriptor) {
-        return descriptor.get;
-      }
-
-      if ('set' in descriptor) {
-        return descriptor.set;
-      }
-    }
-  }, {
-    key: '_extractTopicSignature',
-    value: function _extractTopicSignature(topic) {
-      switch (typeof topic) {
-        case 'function':
-          return this._extractFunctionSignature(topic);
-        default:
-          return this.key;
-      }
-    }
-  }, {
-    key: '_extractFunctionSignature',
-    value: function _extractFunctionSignature(fn) {
-      var _this = this;
-
-      return fn.toString().replace(FUNCTION_REGEXP, function (match, name, params) {
-        if (name === undefined) name = _this.key;
-        return name + params;
-      });
-    }
-  }, {
-    key: 'key',
-    get: function get() {
-      return this.childDescriptor.key;
-    }
-  }, {
-    key: 'parentNotation',
-    get: function get() {
-      return this.parentKlass.constructor.name + '#' + this.parentPropertySignature;
-    }
-  }, {
-    key: 'childNotation',
-    get: function get() {
-      return this.childKlass.constructor.name + '#' + this.childPropertySignature;
-    }
-  }, {
-    key: 'parentTopic',
-    get: function get() {
-      return this._getTopic(this.parentDescriptor);
-    }
-  }, {
-    key: 'childTopic',
-    get: function get() {
-      return this._getTopic(this.childDescriptor);
-    }
-  }, {
-    key: 'parentPropertySignature',
-    get: function get() {
-      return this._extractTopicSignature(this.parentTopic);
-    }
-  }, {
-    key: 'childPropertySignature',
-    get: function get() {
-      return this._extractTopicSignature(this.childTopic);
-    }
-  }]);
-
-  function SyntaxErrorReporter(parentKlass, childKlass, parentDescriptor, childDescriptor) {
-    _classCallCheck(this, SyntaxErrorReporter);
-
-    this.parentKlass = parentKlass;
-    this.childKlass = childKlass;
-    this.parentDescriptor = parentDescriptor;
-    this.childDescriptor = childDescriptor;
-  }
-
-  _createClass(SyntaxErrorReporter, [{
-    key: 'assert',
-    value: function assert(condition) {
-      var msg = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
-
-      if (condition !== true) {
-        this.error(GENERIC_FUNCTION_ERROR + msg);
-      }
-    }
-  }, {
-    key: 'error',
-    value: function error(msg) {
-      var _this2 = this;
-
-      msg = msg
-      // Replace lazily, because they actually might not
-      // be available in all cases
-      .replace('{parent}', function (m) {
-        return _this2.parentNotation;
-      }).replace('{child}', function (m) {
-        return _this2.childNotation;
-      });
-      throw new SyntaxError(msg);
-    }
-  }]);
-
-  return SyntaxErrorReporter;
-}();
-
-function getDescriptorType(descriptor) {
-  if (descriptor.hasOwnProperty('value')) {
-    return 'data';
-  }
-
-  if (descriptor.hasOwnProperty('get') || descriptor.hasOwnProperty('set')) {
-    return 'accessor';
-  }
-
-  // If none of them exist, browsers treat it as
-  // a data descriptor with a value of `undefined`
-  return 'data';
-}
-
-function checkFunctionSignatures(parent, child, reporter) {
-  reporter.assert(parent.length === child.length);
-}
-
-function checkDataDescriptors(parent, child, reporter) {
-  var parentValueType = typeof parent.value;
-  var childValueType = typeof child.value;
-
-  if (parentValueType === 'undefined' && childValueType === 'undefined') {
-    // class properties can be any expression, which isn't ran until the
-    // the instance is created, so we can't reliably get type information
-    // for them yet (per spec). Perhaps when Babel includes flow-type info
-    // in runtime? Tried regex solutions, but super hacky and only feasible
-    // on primitives, which is confusing for usage...
-    reporter.error('descriptor values are both undefined. (class properties are are not currently supported)\'');
-  }
-
-  if (parentValueType !== childValueType) {
-    var isFunctionOverUndefined = childValueType === 'function' && parentValueType === undefined;
-    // Even though we don't support class properties, this
-    // will still handle more than just functions, just in case.
-    // Shadowing an undefined value is an error if the inherited
-    // value was undefined (usually a class property, not a method)
-    if (isFunctionOverUndefined || parentValueType !== undefined) {
-      reporter.error('value types do not match. {parent} is "' + parentValueType + '", {child} is "' + childValueType + '"');
-    }
-  }
-
-  // Switch, in preparation for supporting more types
-  switch (childValueType) {
-    case 'function':
-      checkFunctionSignatures(parent.value, child.value, reporter);
-      break;
-
-    default:
-      reporter.error('Unexpected error. Please file a bug with: {parent} is "' + parentValueType + '", {child} is "' + childValueType + '"');
-      break;
-  }
-}
-
-function checkAccessorDescriptors(parent, child, reporter) {
-  var parentHasGetter = typeof parent.get === 'function';
-  var childHasGetter = typeof child.get === 'function';
-  var parentHasSetter = typeof parent.set === 'function';
-  var childHasSetter = typeof child.set === 'function';
-
-  if (parentHasGetter || childHasGetter) {
-    if (!parentHasGetter && parentHasSetter) {
-      reporter.error('{parent} is setter but {child} is getter');
-    }
-
-    if (!childHasGetter && childHasSetter) {
-      reporter.error('{parent} is getter but {child} is setter');
-    }
-
-    checkFunctionSignatures(parent.get, child.get, reporter);
-  }
-
-  if (parentHasSetter || childHasSetter) {
-    if (!parentHasSetter && parentHasGetter) {
-      reporter.error('{parent} is getter but {child} is setter');
-    }
-
-    if (!childHasSetter && childHasGetter) {
-      reporter.error('{parent} is setter but {child} is getter');
-    }
-
-    checkFunctionSignatures(parent.set, child.set, reporter);
-  }
-}
-
-function checkDescriptors(parent, child, reporter) {
-  var parentType = getDescriptorType(parent);
-  var childType = getDescriptorType(child);
-
-  if (parentType !== childType) {
-    reporter.error('descriptor types do not match. {parent} is "' + parentType + '", {child} is "' + childType + '"');
-  }
-
-  switch (childType) {
-    case 'data':
-      checkDataDescriptors(parent, child, reporter);
-      break;
-
-    case 'accessor':
-      checkAccessorDescriptors(parent, child, reporter);
-      break;
-  }
-}
-
-var suggestionTransforms = [function (key) {
-  return key.toLowerCase();
-}, function (key) {
-  return key.toUpperCase();
-}, function (key) {
-  return key + 's';
-}, function (key) {
-  return key.slice(0, -1);
-}, function (key) {
-  return key.slice(1, key.length);
-}];
-
-function findPossibleAlternatives(superKlass, key) {
-  for (var i = 0, l = suggestionTransforms.length; i < l; i++) {
-    var fn = suggestionTransforms[i];
-    var suggestion = fn(key);
-
-    if (suggestion in superKlass) {
-      return suggestion;
-    }
-  }
-
-  return null;
-}
-
-function handleDescriptor(target, key, descriptor) {
-  descriptor.key = key;
-  var superKlass = Object.getPrototypeOf(target);
-  var superDescriptor = Object.getOwnPropertyDescriptor(superKlass, key);
-  var reporter = new SyntaxErrorReporter(superKlass, target, superDescriptor, descriptor);
-
-  if (superDescriptor === undefined) {
-    var suggestedKey = findPossibleAlternatives(superKlass, key);
-    var suggestion = suggestedKey ? '\n\n  Did you mean "' + suggestedKey + '"?' : '';
-    reporter.error('No descriptor matching {child} was found on the prototype chain.' + suggestion);
-  }
-
-  checkDescriptors(superDescriptor, descriptor, reporter);
-
-  return descriptor;
-}
-
-function override() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports['default'] = readonly;
-
-var _privateUtils = __webpack_require__(1);
-
-function handleDescriptor(target, key, descriptor) {
-  descriptor.writable = false;
-  return descriptor;
-}
-
-function readonly() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
-exports['default'] = suppressWarnings;
-
-var _privateUtils = __webpack_require__(1);
-
-function suppressedWarningNoop() {
-  // Warnings are currently suppressed via @suppressWarnings
-}
-
-function applyWithoutWarnings(context, fn, args) {
-  if (typeof console === 'object') {
-    var nativeWarn = console.warn;
-    console.warn = suppressedWarningNoop;
-    var ret = fn.apply(context, args);
-    console.warn = nativeWarn;
-    return ret;
-  } else {
-    return fn.apply(context, args);
-  }
-}
-
-function handleDescriptor(target, key, descriptor) {
-  return _extends({}, descriptor, {
-    value: function suppressWarningsWrapper() {
-      return applyWithoutWarnings(this, descriptor.value, arguments);
-    }
-  });
-}
-
-function suppressWarnings() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];var _n = true;var _d = false;var _e = undefined;try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;_e = err;
-    } finally {
-      try {
-        if (!_n && _i['return']) _i['return']();
-      } finally {
-        if (_d) throw _e;
-      }
-    }return _arr;
-  }return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError('Invalid attempt to destructure non-iterable instance');
-    }
-  };
-}();
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
-exports['default'] = throttle;
-
-var _privateUtils = __webpack_require__(1);
-
-var DEFAULT_TIMEOUT = 300;
-
-function handleDescriptor(target, key, descriptor, _ref) {
-  var _ref2 = _slicedToArray(_ref, 2);
-
-  var _ref2$0 = _ref2[0];
-  var wait = _ref2$0 === undefined ? DEFAULT_TIMEOUT : _ref2$0;
-  var _ref2$1 = _ref2[1];
-  var options = _ref2$1 === undefined ? {} : _ref2$1;
-
-  var callback = descriptor.value;
-
-  if (typeof callback !== 'function') {
-    throw new SyntaxError('Only functions can be throttled');
-  }
-
-  if (options.leading !== false) {
-    options.leading = true;
-  }
-
-  if (options.trailing !== false) {
-    options.trailing = true;
-  }
-
-  return _extends({}, descriptor, {
-    value: function value() {
-      var _this = this;
-
-      var meta = (0, _privateUtils.metaFor)(this);
-      var throttleTimeoutIds = meta.throttleTimeoutIds;
-      var throttlePreviousTimestamps = meta.throttlePreviousTimestamps;
-
-      var timeout = throttleTimeoutIds[key];
-      // last execute timestamp
-      var previous = throttlePreviousTimestamps[key] || 0;
-      var now = Date.now();
-
-      if (options.trailing) {
-        meta.throttleTrailingArgs = arguments;
-      }
-
-      // if first be called and disable the execution on the leading edge
-      // set last execute timestamp to now
-      if (!previous && options.leading === false) {
-        previous = now;
-      }
-
-      var remaining = wait - (now - previous);
-
-      if (remaining <= 0) {
-        clearTimeout(timeout);
-        delete throttleTimeoutIds[key];
-        throttlePreviousTimestamps[key] = now;
-        callback.apply(this, arguments);
-      } else if (!timeout && options.trailing) {
-        throttleTimeoutIds[key] = setTimeout(function () {
-          throttlePreviousTimestamps[key] = options.leading === false ? 0 : Date.now();
-          delete throttleTimeoutIds[key];
-          callback.apply(_this, meta.throttleTrailingArgs);
-          // don't leak memory!
-          meta.throttleTrailingArgs = null;
-        }, remaining);
-      }
-    }
-  });
-}
-
-function throttle() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-module.exports = exports['default'];
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];var _n = true;var _d = false;var _e = undefined;try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;_e = err;
-    } finally {
-      try {
-        if (!_n && _i['return']) _i['return']();
-      } finally {
-        if (_d) throw _e;
-      }
-    }return _arr;
-  }return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError('Invalid attempt to destructure non-iterable instance');
-    }
-  };
-}();
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
-exports['default'] = time;
-
-var _privateUtils = __webpack_require__(1);
-
-var labels = {};
-
-// Exported for mocking in tests
-var defaultConsole = {
-  time: console.time ? console.time.bind(console) : function (label) {
-    labels[label] = new Date();
-  },
-  timeEnd: console.timeEnd ? console.timeEnd.bind(console) : function (label) {
-    var timeNow = new Date();
-    var timeTaken = timeNow - labels[label];
-    delete labels[label];
-    console.log(label + ': ' + timeTaken + 'ms');
-  }
-};
-
-exports.defaultConsole = defaultConsole;
-var count = 0;
-
-function handleDescriptor(target, key, descriptor, _ref) {
-  var _ref2 = _slicedToArray(_ref, 2);
-
-  var _ref2$0 = _ref2[0];
-  var prefix = _ref2$0 === undefined ? null : _ref2$0;
-  var _ref2$1 = _ref2[1];
-  var console = _ref2$1 === undefined ? defaultConsole : _ref2$1;
-
-  var fn = descriptor.value;
-
-  if (prefix === null) {
-    prefix = target.constructor.name + '.' + key;
-  }
-
-  if (typeof fn !== 'function') {
-    throw new SyntaxError('@time can only be used on functions, not: ' + fn);
-  }
-
-  return _extends({}, descriptor, {
-    value: function value() {
-      var label = prefix + '-' + count;
-      count++;
-      console.time(label);
-
-      try {
-        return fn.apply(this, arguments);
-      } finally {
-        console.timeEnd(label);
-      }
-    }
-  });
-}
-
-function time() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return (0, _privateUtils.decorate)(handleDescriptor, args);
-}
-
-/***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-/* unused harmony export ConvLayer */
-var _dec, _class;
-
-
-
-
-
-let ConvLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class ConvLayer {
+let ConvLayer = class ConvLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -3042,16 +1219,16 @@ let ConvLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_d
     var bias = typeof opt.bias_pref !== 'undefined' ? opt.bias_pref : 0.0;
     this.filters = [];
     for (var i = 0; i < this.out_depth; i++) {
-      this.filters.push(new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](this.sx, this.sy, this.in_depth));
+      this.filters.push(new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](this.sx, this.sy, this.in_depth));
     }
-    this.biases = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](1, 1, this.out_depth, bias);
+    this.biases = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](1, 1, this.out_depth, bias);
   }
 
   forward(V, is_training) {
     // optimized code by @mdda that achieves 2x speedup over previous version
 
     this.in_act = V;
-    var A = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](this.out_sx | 0, this.out_sy | 0, this.out_depth | 0, 0.0);
+    var A = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](this.out_sx | 0, this.out_sy | 0, this.out_depth | 0, 0.0);
 
     var V_sx = V.sx | 0;
     var V_sy = V.sy | 0;
@@ -3176,33 +1353,24 @@ let ConvLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_d
     this.l2_decay_mul = typeof json.l2_decay_mul !== 'undefined' ? json.l2_decay_mul : 1.0;
     this.pad = typeof json.pad !== 'undefined' ? json.pad : 0;
     for (var i = 0; i < json.filters.length; i++) {
-      var v = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](0, 0, 0, 0);
+      var v = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](0, 0, 0, 0);
       v.fromJSON(json.filters[i]);
       this.filters.push(v);
     }
-    this.biases = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](0, 0, 0, 0);
+    this.biases = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](0, 0, 0, 0);
     this.biases.fromJSON(json.biases);
   }
-}) || _class);
-
-//export default ConvLayer
+};
 
 /***/ },
-/* 26 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let DropoutLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class DropoutLayer {
+let DropoutLayer = class DropoutLayer {
   constructor(opt) {
     opt = opt || {};
 
@@ -3276,27 +1444,17 @@ let DropoutLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_cor
     this.layer_type = json.layer_type;
     this.drop_prob = json.drop_prob;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = DropoutLayer;
+};
 
 /***/ },
-/* 27 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let FullyConnLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class FullyConnLayer {
+let FullyConnLayer = class FullyConnLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -3318,14 +1476,14 @@ let FullyConnLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_c
     var bias = typeof opt.bias_pref !== 'undefined' ? opt.bias_pref : 0.0;
     this.filters = [];
     for (var i = 0; i < this.out_depth; i++) {
-      this.filters.push(new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](1, 1, this.num_inputs));
+      this.filters.push(new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](1, 1, this.num_inputs));
     }
-    this.biases = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](1, 1, this.out_depth, bias);
+    this.biases = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](1, 1, this.out_depth, bias);
   }
 
   forward(V, is_training) {
     this.in_act = V;
-    var A = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](1, 1, this.out_depth, 0.0);
+    var A = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](1, 1, this.out_depth, 0.0);
     var Vw = V.w;
     for (var i = 0; i < this.out_depth; i++) {
       var a = 0.0;
@@ -3392,49 +1550,175 @@ let FullyConnLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_c
     this.l2_decay_mul = typeof json.l2_decay_mul !== 'undefined' ? json.l2_decay_mul : 1.0;
     this.filters = [];
     for (var i = 0; i < json.filters.length; i++) {
-      var v = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](0, 0, 0, 0);
+      var v = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](0, 0, 0, 0);
       v.fromJSON(json.filters[i]);
       this.filters.push(v);
     }
-    this.biases = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](0, 0, 0, 0);
+    this.biases = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](0, 0, 0, 0);
     this.biases.fromJSON(json.biases);
   }
-}) || _class);
+};
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = FullyConnLayer;
 
 /***/ },
-/* 28 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fc__ = __webpack_require__(27);
-/* unused harmony reexport namespace */
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lrn__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropout__ = __webpack_require__(26);
-/* unused harmony reexport namespace */
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__input__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__softmax__ = __webpack_require__(36);
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__regression__ = __webpack_require__(33);
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cnn__ = __webpack_require__(25);
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pool__ = __webpack_require__(32);
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__relu__ = __webpack_require__(34);
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sigmoid__ = __webpack_require__(35);
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__tanh__ = __webpack_require__(38);
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__maxout__ = __webpack_require__(31);
-/* unused harmony reexport namespace */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__svm__ = __webpack_require__(37);
-/* unused harmony reexport namespace */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fc__ = __webpack_require__(8);
+/* unused harmony namespace reexport */
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ConvLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["ConvLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_1__lrn__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lrn__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropout__ = __webpack_require__(7);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ConvLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["ConvLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_2__dropout__["SoftmaxLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ConvLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["ConvLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_3__input__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__input__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__softmax__ = __webpack_require__(17);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ConvLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["ConvLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_4__softmax__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__regression__ = __webpack_require__(14);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ConvLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["ConvLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_5__regression__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cnn__ = __webpack_require__(6);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ConvLayer", function() { return __WEBPACK_IMPORTED_MODULE_6__cnn__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pool__ = __webpack_require__(13);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_7__pool__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__relu__ = __webpack_require__(15);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_8__relu__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sigmoid__ = __webpack_require__(16);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_9__sigmoid__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__tanh__ = __webpack_require__(19);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_10__tanh__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__maxout__ = __webpack_require__(12);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_11__maxout__["SoftmaxLayer"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__svm__ = __webpack_require__(18);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "FullyConnLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["FullyConnLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SigmoidLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["SigmoidLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "DropoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["DropoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "InputLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["InputLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "LocalResponseNormalizationLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["LocalResponseNormalizationLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "MaxoutLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["MaxoutLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "PoolLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["PoolLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "RegressionLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["RegressionLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "ReluLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["ReluLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SVMLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["SVMLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "TanhLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["TanhLayer"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "SoftmaxLayer", function() { return __WEBPACK_IMPORTED_MODULE_12__svm__["SoftmaxLayer"]; });
 
 
 
@@ -3450,32 +1734,25 @@ let FullyConnLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_c
 
 
 /***/ },
-/* 29 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(4);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(1);
 
 
 
-
-
-
-let InputLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class InputLayer {
+let InputLayer = class InputLayer {
   constructor(opt) {
     opt = opt || {};
 
     // required: depth
-    this.out_depth = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* getopt */])(opt, ['out_depth', 'depth'], 0);
+    this.out_depth = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["c" /* getopt */])(opt, ['out_depth', 'depth'], 0);
 
     // optional: default these dimensions to 1
-    this.out_sx = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* getopt */])(opt, ['out_sx', 'sx', 'width'], 1);
-    this.out_sy = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* getopt */])(opt, ['out_sy', 'sy', 'height'], 1);
+    this.out_sx = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["c" /* getopt */])(opt, ['out_sx', 'sx', 'width'], 1);
+    this.out_sy = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["c" /* getopt */])(opt, ['out_sy', 'sy', 'height'], 1);
 
     // computed
     this.layer_type = 'input';
@@ -3508,27 +1785,17 @@ let InputLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_
     this.out_sy = json.out_sy;
     this.layer_type = json.layer_type;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = InputLayer;
+};
 
 /***/ },
-/* 30 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let LocalResponseNormalizationLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class LocalResponseNormalizationLayer {
+let LocalResponseNormalizationLayer = class LocalResponseNormalizationLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -3638,27 +1905,17 @@ let LocalResponseNormalizationLayer = (_dec = __webpack_require__.i(__WEBPACK_IM
     this.out_depth = json.out_depth;
     this.layer_type = json.layer_type;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = LocalResponseNormalizationLayer;
+};
 
 /***/ },
-/* 31 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let MaxoutLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class MaxoutLayer {
+let MaxoutLayer = class MaxoutLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -3677,7 +1934,7 @@ let MaxoutLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core
   forward(V, is_training) {
     this.in_act = V;
     var N = this.out_depth;
-    var V2 = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](this.out_sx, this.out_sy, this.out_depth, 0.0);
+    var V2 = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](this.out_sx, this.out_sy, this.out_depth, 0.0);
 
     // optimization branch. If we're operating on 1D arrays we dont have
     // to worry about keeping track of x,y,d coordinates inside
@@ -3772,27 +2029,17 @@ let MaxoutLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core
     this.group_size = json.group_size;
     this.switches = global.zeros(this.group_size);
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = MaxoutLayer;
+};
 
 /***/ },
-/* 32 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let PoolLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class PoolLayer {
+let PoolLayer = class PoolLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -3820,7 +2067,7 @@ let PoolLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_d
   forward(V, is_training) {
     this.in_act = V;
 
-    var A = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](this.out_sx, this.out_sy, this.out_depth, 0.0);
+    var A = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](this.out_sx, this.out_sy, this.out_depth, 0.0);
 
     var n = 0; // a counter for switches
     for (var d = 0; d < this.out_depth; d++) {
@@ -3916,27 +2163,17 @@ let PoolLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_d
     this.switchx = global.zeros(this.out_sx * this.out_sy * this.out_depth); // need to re-init these appropriately
     this.switchy = global.zeros(this.out_sx * this.out_sy * this.out_depth);
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = PoolLayer;
+};
 
 /***/ },
-/* 33 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let RegressionLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class RegressionLayer {
+let RegressionLayer = class RegressionLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -4008,27 +2245,17 @@ let RegressionLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_
     this.layer_type = json.layer_type;
     this.num_inputs = json.num_inputs;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = RegressionLayer;
+};
 
 /***/ },
-/* 34 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let ReluLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class ReluLayer {
+let ReluLayer = class ReluLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -4081,27 +2308,17 @@ let ReluLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_d
     this.out_sy = json.out_sy;
     this.layer_type = json.layer_type;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = ReluLayer;
+};
 
 /***/ },
-/* 35 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let SigmoidLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class SigmoidLayer {
+let SigmoidLayer = class SigmoidLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -4155,27 +2372,17 @@ let SigmoidLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_cor
     this.out_sy = json.out_sy;
     this.layer_type = json.layer_type;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = SigmoidLayer;
+};
 
 /***/ },
-/* 36 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let SoftmaxLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class SoftmaxLayer {
+let SoftmaxLayer = class SoftmaxLayer {
   constructor(opt) {
     opt = opt || {};
 
@@ -4190,7 +2397,7 @@ let SoftmaxLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_cor
   forward(V, is_training) {
     this.in_act = V;
 
-    var A = new __WEBPACK_IMPORTED_MODULE_2__vol__["a" /* default */](1, 1, this.out_depth, 0.0);
+    var A = new __WEBPACK_IMPORTED_MODULE_0__vol__["b" /* default */](1, 1, this.out_depth, 0.0);
 
     // compute max activation
     var as = V.w;
@@ -4256,27 +2463,17 @@ let SoftmaxLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_cor
     this.layer_type = json.layer_type;
     this.num_inputs = json.num_inputs;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = SoftmaxLayer;
+};
 
 /***/ },
-/* 37 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
-
-
-
-let SVMLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class SVMLayer {
+let SVMLayer = class SVMLayer {
   constructor(opt) {
     opt = opt || {};
 
@@ -4347,24 +2544,14 @@ let SVMLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_de
     this.layer_type = json.layer_type;
     this.num_inputs = json.num_inputs;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = SVMLayer;
+};
 
 /***/ },
-/* 38 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_factory__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vol__ = __webpack_require__(0);
-var _dec, _class;
-
-
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
 
 
 // a helper function, since tanh is not yet part of ECMAScript. Will be in v6.
@@ -4376,7 +2563,7 @@ function tanh(x) {
 // Implements Tanh nnonlinearity elementwise
 // x -> tanh(x) 
 // so the output is between -1 and 1.
-let TanhLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["decorate"])(__WEBPACK_IMPORTED_MODULE_0__layer_factory__["a" /* register */]), _dec(_class = class TanhLayer {
+let TanhLayer = class TanhLayer {
   constructor(opt) {
     var opt = opt || {};
 
@@ -4428,34 +2615,29 @@ let TanhLayer = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_core_d
     this.out_sy = json.out_sy;
     this.layer_type = json.layer_type;
   }
-}) || _class);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = TanhLayer;
+};
 
 /***/ },
-/* 39 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vol__ = __webpack_require__(0);
-/* empty harmony namespace reexport */
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__net__ = __webpack_require__(5);
-/* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__magicnet__ = __webpack_require__(7);
-/* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__trainer__ = __webpack_require__(8);
-/* empty harmony namespace reexport */
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Vol", function() { return __WEBPACK_IMPORTED_MODULE_0__vol__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__net__ = __webpack_require__(2);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Net", function() { return __WEBPACK_IMPORTED_MODULE_1__net__["Net"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__magicnet__ = __webpack_require__(3);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "MagicNet", function() { return __WEBPACK_IMPORTED_MODULE_2__magicnet__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__trainer__ = __webpack_require__(4);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Trainer", function() { return __WEBPACK_IMPORTED_MODULE_3__trainer__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "SGDTrainer", function() { return __WEBPACK_IMPORTED_MODULE_3__trainer__["b"]; });
 
 
 
-
-
-const SGDTrainer = Trainer;
-/* harmony export (immutable) */ exports["SGDTrainer"] = SGDTrainer;
 
 
 /***/ }
 /******/ ]);
+});
 //# sourceMappingURL=convnet.js.map

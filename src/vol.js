@@ -7,7 +7,7 @@ import { zeros, randn } from './utils'
 // all weights, and also stores all gradients w.r.t. 
 // the data. c is optionally a value to initialize the volume
 // with. If c is missing, fills the Vol with random Ts.
-class Vol {
+export class Vol {
   constructor(sx, sy, depth, c) {
     if (Object.prototype.toString.call(sx) === '[object Array]') {
       // we were given a list in sx, assume 1D volume and fill it up
@@ -123,6 +123,5 @@ class Vol {
     }
   }
 }
-
 
 export default Vol

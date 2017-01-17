@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 class SigmoidLayer {
   constructor(opt) {
     var opt = opt || {};
@@ -58,5 +55,3 @@ class SigmoidLayer {
     this.layer_type = json.layer_type;
   }
 }
-
-export default SigmoidLayer

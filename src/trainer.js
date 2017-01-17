@@ -1,7 +1,7 @@
 import Vol from './vol'
 import { zeros } from './utils'
 
-class Trainer {
+export class Trainer {
   constructor(net, options) {
     this.net = net;
 
@@ -153,4 +153,4 @@ class Trainer {
   }
 }
 
-export default Trainer
+export const SGDTrainer = Trainer

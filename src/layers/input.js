@@ -1,9 +1,6 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 import { getopt } from '../utils'
 
-@decorate(register)
 class InputLayer {
   constructor(opt) {
     opt = opt || {};
@@ -47,5 +44,3 @@ class InputLayer {
     this.layer_type = json.layer_type;
   }
 }
-
-export default InputLayer

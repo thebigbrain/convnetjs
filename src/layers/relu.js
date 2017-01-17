@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 class ReluLayer {
   constructor(opt) {
     var opt = opt || {};
@@ -58,4 +55,3 @@ class ReluLayer {
   }
 }
 
-export default ReluLayer

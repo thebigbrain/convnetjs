@@ -1,8 +1,5 @@
-import { register } from '../layer-factory'
-import { decorate } from 'core-decorators'
 import Vol from '../vol'
 
-@decorate(register)
 class MaxoutLayer {
   constructor(opt) {
     var opt = opt || {};
@@ -119,5 +116,3 @@ class MaxoutLayer {
     this.switches = global.zeros(this.group_size);
   }
 }
-
-export default MaxoutLayer
