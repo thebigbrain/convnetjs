@@ -1153,7 +1153,7 @@ const SGDTrainer = Trainer;
 let layers = {};
 
 const createLayer = def => {
-	if (layers(def.type)) return new layers(def.type)(def);
+	if (layers[def.type]) return new layers[def.type](def);
 	throw new Error(`UNRECOGNIZED LAYER TYPE: ${ def.type }`);
 };
 /* harmony export (immutable) */ exports["a"] = createLayer;
